@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08C03AB0212AE92C00EBB2CF /* TeacherCoursesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C03AAF212AE92C00EBB2CF /* TeacherCoursesCollectionViewController.swift */; };
+		08C03ABA212B753100EBB2CF /* TeacherPromptsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C03AB9212B753100EBB2CF /* TeacherPromptsCollectionViewController.swift */; };
 		08E16DAB2121BE7800AFFCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E16DAA2121BE7800AFFCF3 /* AppDelegate.swift */; };
 		08E16DAD2121BE7800AFFCF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E16DAC2121BE7800AFFCF3 /* ViewController.swift */; };
 		08E16DB02121BE7800AFFCF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E16DAE2121BE7800AFFCF3 /* Main.storyboard */; };
@@ -14,6 +16,10 @@
 		08E16DB52121BE7B00AFFCF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E16DB32121BE7B00AFFCF3 /* LaunchScreen.storyboard */; };
 		08E16DC02121BE7B00AFFCF3 /* HMWKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E16DBF2121BE7B00AFFCF3 /* HMWKTests.swift */; };
 		08E16DCB2121BE7B00AFFCF3 /* HMWKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E16DCA2121BE7B00AFFCF3 /* HMWKUITests.swift */; };
+		08F2C139213315EB00269D9A /* TeacherHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C138213315EB00269D9A /* TeacherHomeViewController.swift */; };
+		08F2C13F21331A7C00269D9A /* TeacherHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C13E21331A7C00269D9A /* TeacherHomeTableViewCell.swift */; };
+		08F2C143213337DF00269D9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C142213337DF00269D9A /* User.swift */; };
+		08F2C145213337FE00269D9A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C144213337FE00269D9A /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08C03AAF212AE92C00EBB2CF /* TeacherCoursesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCoursesCollectionViewController.swift; sourceTree = "<group>"; };
+		08C03AB9212B753100EBB2CF /* TeacherPromptsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptsCollectionViewController.swift; sourceTree = "<group>"; };
 		08E16DA72121BE7800AFFCF3 /* HMWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E16DAA2121BE7800AFFCF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08E16DAC2121BE7800AFFCF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,10 @@
 		08E16DC62121BE7B00AFFCF3 /* HMWKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HMWKUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E16DCA2121BE7B00AFFCF3 /* HMWKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HMWKUITests.swift; sourceTree = "<group>"; };
 		08E16DCC2121BE7B00AFFCF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08F2C138213315EB00269D9A /* TeacherHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeViewController.swift; sourceTree = "<group>"; };
+		08F2C13E21331A7C00269D9A /* TeacherHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeTableViewCell.swift; sourceTree = "<group>"; };
+		08F2C142213337DF00269D9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		08F2C144213337FE00269D9A /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +109,18 @@
 		08E16DA92121BE7800AFFCF3 /* HMWK */ = {
 			isa = PBXGroup;
 			children = (
+				08E16DAE2121BE7800AFFCF3 /* Main.storyboard */,
 				08E16DAA2121BE7800AFFCF3 /* AppDelegate.swift */,
 				08E16DAC2121BE7800AFFCF3 /* ViewController.swift */,
-				08E16DAE2121BE7800AFFCF3 /* Main.storyboard */,
+				08F2C138213315EB00269D9A /* TeacherHomeViewController.swift */,
+				08F2C13E21331A7C00269D9A /* TeacherHomeTableViewCell.swift */,
+				08C03AAF212AE92C00EBB2CF /* TeacherCoursesCollectionViewController.swift */,
+				08C03AB9212B753100EBB2CF /* TeacherPromptsCollectionViewController.swift */,
 				08E16DB12121BE7B00AFFCF3 /* Assets.xcassets */,
 				08E16DB32121BE7B00AFFCF3 /* LaunchScreen.storyboard */,
 				08E16DB62121BE7B00AFFCF3 /* Info.plist */,
+				08F2C142213337DF00269D9A /* User.swift */,
+				08F2C144213337FE00269D9A /* Response.swift */,
 			);
 			path = HMWK;
 			sourceTree = "<group>";
@@ -258,6 +276,12 @@
 			files = (
 				08E16DAD2121BE7800AFFCF3 /* ViewController.swift in Sources */,
 				08E16DAB2121BE7800AFFCF3 /* AppDelegate.swift in Sources */,
+				08C03AB0212AE92C00EBB2CF /* TeacherCoursesCollectionViewController.swift in Sources */,
+				08F2C145213337FE00269D9A /* Response.swift in Sources */,
+				08F2C143213337DF00269D9A /* User.swift in Sources */,
+				08F2C13F21331A7C00269D9A /* TeacherHomeTableViewCell.swift in Sources */,
+				08F2C139213315EB00269D9A /* TeacherHomeViewController.swift in Sources */,
+				08C03ABA212B753100EBB2CF /* TeacherPromptsCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
