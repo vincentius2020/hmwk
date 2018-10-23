@@ -11,11 +11,11 @@ import UIKit
 class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
-    var responses = [Response]()
-    
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var teacherProfileImageView: UIImageView!
     @IBOutlet weak var teacherHomeTableView: UITableView!
-    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var teacherHomeUsername: UILabel!
+    
     
     @IBAction func editButtonPressed(_ sender: Any) {
         
@@ -47,7 +47,7 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             //imageView has an image property set to be the image the user chose
-            profileImageView.image = image
+            teacherProfileImageView.image = image
             
         }
         
@@ -63,17 +63,26 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.responses.count
+        return Singleton.singletonObject.allResponses!.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "teacherFeedCell", for: indexPath) as! TeacherHomeTableViewCell
-
-        let response = self.responses[indexPath.row]
-
-        cell.Response = response
-
+        
+        let response = Singleton.singletonObject.allResponses?[indexPath.row]
+        
+        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
+        
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 1
+        
+        cell.responseCellComment?.text = response?.comment
+        cell.responseCellUsername?.text = response?.user.username
+        cell.teacherFeedImageView?.image = response?.image
+        
+        cell.responseCellPromptTitle?.text = prompt?.promptTitle
+        
         return cell
     }
     
@@ -84,11 +93,17 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
         teacherHomeTableView.delegate = self
         teacherHomeTableView.dataSource = self
         
-        usernameLabel.text = "yourName"
-        
+        teacherHomeUsername.text = Singleton.singletonObject.teacherUser1.username
+        teacherProfileImageView.image = Singleton.singletonObject.teacherUser1.profileImage
+        editButton.setTitle("Edit",for: .normal)
+
         navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
         
-        // Do any additional setup after loading the view.
+        teacherProfileImageView.layer.cornerRadius = teacherProfileImageView.frame.size.width/2
+        
+        teacherProfileImageView.layer.borderWidth = 4
+        teacherProfileImageView.layer.borderColor = UIColor.black.cgColor
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,8 +11,9 @@ import UIKit
 class TeacherHomeTableViewCell: UITableViewCell {
 
     @IBOutlet weak var teacherFeedImageView: UIImageView!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var commentLabel: UILabel!
+    @IBOutlet weak var responseCellUsername: UILabel!
+    @IBOutlet weak var responseCellPromptTitle: UILabel!
+    @IBOutlet weak var responseCellComment: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
