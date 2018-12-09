@@ -10,8 +10,7 @@ import UIKit
 
 class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    
-    @IBOutlet weak var teacherProfileImageView: UIImageView!
+    @IBOutlet weak var teacherHomeImageView: UIImageView!
     @IBOutlet weak var teacherHomeTableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var teacherHomeUsername: UILabel!
@@ -41,13 +40,14 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
         // get image from info dictionary
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             //imageView has an image property set to be the image the user chose
-            teacherProfileImageView.image = image
+            teacherHomeImageView.image = image
             
         }
         
@@ -57,14 +57,17 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Singleton.singletonObject.allResponses!.count
     }
+    
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,15 +97,15 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
         teacherHomeTableView.dataSource = self
         
         teacherHomeUsername.text = Singleton.singletonObject.teacherUser1.username
-        teacherProfileImageView.image = Singleton.singletonObject.teacherUser1.profileImage
+        teacherHomeImageView.image = Singleton.singletonObject.teacherUser1.profileImage
         editButton.setTitle("Edit",for: .normal)
 
         navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
         
-        teacherProfileImageView.layer.cornerRadius = teacherProfileImageView.frame.size.width/2
+        teacherHomeImageView.layer.cornerRadius = teacherHomeImageView.frame.size.width/2
         
-        teacherProfileImageView.layer.borderWidth = 4
-        teacherProfileImageView.layer.borderColor = UIColor.black.cgColor
+        teacherHomeImageView.layer.borderWidth = 4
+        teacherHomeImageView.layer.borderColor = UIColor.black.cgColor
         
     }
 

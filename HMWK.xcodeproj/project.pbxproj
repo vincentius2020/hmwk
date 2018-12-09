@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08063B4221BBD7C000D67A8C /* StudentCoursesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08063B4121BBD7C000D67A8C /* StudentCoursesCollectionViewCell.swift */; };
+		08063B4421BBE44000D67A8C /* StudentPromptsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08063B4321BBE44000D67A8C /* StudentPromptsCollectionViewCell.swift */; };
+		08063B4E21BD9F6700D67A8C /* StudentCoursePromptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08063B4D21BD9F6700D67A8C /* StudentCoursePromptsViewController.swift */; };
 		0820705B2142B7E600E2B539 /* TeacherCourseCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0820705A2142B7E600E2B539 /* TeacherCourseCellCollectionViewCell.swift */; };
 		0820705D2142B89F00E2B539 /* TeacherCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0820705C2142B89F00E2B539 /* TeacherCoursesViewController.swift */; };
 		0820705F2142BF2500E2B539 /* TeacherPromptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0820705E2142BF2500E2B539 /* TeacherPromptsViewController.swift */; };
 		082070612142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082070602142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift */; };
 		08207063215FA22200E2B539 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08207062215FA22100E2B539 /* Singleton.swift */; };
+		084EAE7C21AB21E100AD6DDA /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EAE7B21AB21E100AD6DDA /* LaunchViewController.swift */; };
 		085F333E2135FFEC009E2FDA /* FakeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085F333D2135FFEC009E2FDA /* FakeData.swift */; };
 		085F3342213DCD3F009E2FDA /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085F3341213DCD3F009E2FDA /* Course.swift */; };
 		085F33442141A70B009E2FDA /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085F33432141A70B009E2FDA /* Prompt.swift */; };
+		08C33F1321A5C15C007143F3 /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C33F1221A5C15C007143F3 /* StudentHomeViewController.swift */; };
+		08C33F1521A5C1D2007143F3 /* StudentCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C33F1421A5C1D2007143F3 /* StudentCoursesViewController.swift */; };
+		08C33F1721A5C1DD007143F3 /* StudentPromptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C33F1621A5C1DD007143F3 /* StudentPromptsViewController.swift */; };
+		08D5E53021B024AC006E1414 /* StudentHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D5E52F21B024AC006E1414 /* StudentHomeTableViewCell.swift */; };
 		08E16DAB2121BE7800AFFCF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E16DAA2121BE7800AFFCF3 /* AppDelegate.swift */; };
 		08E16DAD2121BE7800AFFCF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E16DAC2121BE7800AFFCF3 /* ViewController.swift */; };
 		08E16DB02121BE7800AFFCF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08E16DAE2121BE7800AFFCF3 /* Main.storyboard */; };
@@ -26,6 +34,7 @@
 		08F2C13F21331A7C00269D9A /* TeacherHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C13E21331A7C00269D9A /* TeacherHomeTableViewCell.swift */; };
 		08F2C143213337DF00269D9A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C142213337DF00269D9A /* User.swift */; };
 		08F2C145213337FE00269D9A /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F2C144213337FE00269D9A /* Response.swift */; };
+		08FD475F21BDAA4E00C5DC1A /* StudentCoursePromptsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FD475E21BDAA4E00C5DC1A /* StudentCoursePromptsCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,14 +55,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08063B4121BBD7C000D67A8C /* StudentCoursesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoursesCollectionViewCell.swift; sourceTree = "<group>"; };
+		08063B4321BBE44000D67A8C /* StudentPromptsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPromptsCollectionViewCell.swift; sourceTree = "<group>"; };
+		08063B4D21BD9F6700D67A8C /* StudentCoursePromptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoursePromptsViewController.swift; sourceTree = "<group>"; };
 		0820705A2142B7E600E2B539 /* TeacherCourseCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		0820705C2142B89F00E2B539 /* TeacherCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCoursesViewController.swift; sourceTree = "<group>"; };
 		0820705E2142BF2500E2B539 /* TeacherPromptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptsViewController.swift; sourceTree = "<group>"; };
 		082070602142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		08207062215FA22100E2B539 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		084EAE7B21AB21E100AD6DDA /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		085F333D2135FFEC009E2FDA /* FakeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeData.swift; sourceTree = "<group>"; };
 		085F3341213DCD3F009E2FDA /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		085F33432141A70B009E2FDA /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		08C33F1221A5C15C007143F3 /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
+		08C33F1421A5C1D2007143F3 /* StudentCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoursesViewController.swift; sourceTree = "<group>"; };
+		08C33F1621A5C1DD007143F3 /* StudentPromptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentPromptsViewController.swift; sourceTree = "<group>"; };
+		08D5E52F21B024AC006E1414 /* StudentHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeTableViewCell.swift; sourceTree = "<group>"; };
 		08E16DA72121BE7800AFFCF3 /* HMWK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMWK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E16DAA2121BE7800AFFCF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08E16DAC2121BE7800AFFCF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +88,7 @@
 		08F2C13E21331A7C00269D9A /* TeacherHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeTableViewCell.swift; sourceTree = "<group>"; };
 		08F2C142213337DF00269D9A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		08F2C144213337FE00269D9A /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		08FD475E21BDAA4E00C5DC1A /* StudentCoursePromptsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCoursePromptsCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,12 +142,19 @@
 				08E16DAE2121BE7800AFFCF3 /* Main.storyboard */,
 				08E16DAA2121BE7800AFFCF3 /* AppDelegate.swift */,
 				08E16DAC2121BE7800AFFCF3 /* ViewController.swift */,
+				084EAE7B21AB21E100AD6DDA /* LaunchViewController.swift */,
 				08F2C138213315EB00269D9A /* TeacherHomeViewController.swift */,
 				08F2C13E21331A7C00269D9A /* TeacherHomeTableViewCell.swift */,
 				0820705C2142B89F00E2B539 /* TeacherCoursesViewController.swift */,
 				0820705A2142B7E600E2B539 /* TeacherCourseCellCollectionViewCell.swift */,
 				0820705E2142BF2500E2B539 /* TeacherPromptsViewController.swift */,
 				082070602142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift */,
+				08C33F1221A5C15C007143F3 /* StudentHomeViewController.swift */,
+				08D5E52F21B024AC006E1414 /* StudentHomeTableViewCell.swift */,
+				08C33F1421A5C1D2007143F3 /* StudentCoursesViewController.swift */,
+				08063B4121BBD7C000D67A8C /* StudentCoursesCollectionViewCell.swift */,
+				08C33F1621A5C1DD007143F3 /* StudentPromptsViewController.swift */,
+				08063B4321BBE44000D67A8C /* StudentPromptsCollectionViewCell.swift */,
 				08E16DB12121BE7B00AFFCF3 /* Assets.xcassets */,
 				08E16DB32121BE7B00AFFCF3 /* LaunchScreen.storyboard */,
 				08E16DB62121BE7B00AFFCF3 /* Info.plist */,
@@ -139,6 +164,8 @@
 				085F33432141A70B009E2FDA /* Prompt.swift */,
 				08207062215FA22100E2B539 /* Singleton.swift */,
 				085F333D2135FFEC009E2FDA /* FakeData.swift */,
+				08063B4D21BD9F6700D67A8C /* StudentCoursePromptsViewController.swift */,
+				08FD475E21BDAA4E00C5DC1A /* StudentCoursePromptsCollectionViewCell.swift */,
 			);
 			path = HMWK;
 			sourceTree = "<group>";
@@ -293,14 +320,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				085F333E2135FFEC009E2FDA /* FakeData.swift in Sources */,
+				08FD475F21BDAA4E00C5DC1A /* StudentCoursePromptsCollectionViewCell.swift in Sources */,
 				08207063215FA22200E2B539 /* Singleton.swift in Sources */,
+				08C33F1321A5C15C007143F3 /* StudentHomeViewController.swift in Sources */,
+				08063B4421BBE44000D67A8C /* StudentPromptsCollectionViewCell.swift in Sources */,
+				08D5E53021B024AC006E1414 /* StudentHomeTableViewCell.swift in Sources */,
+				08C33F1521A5C1D2007143F3 /* StudentCoursesViewController.swift in Sources */,
 				0820705B2142B7E600E2B539 /* TeacherCourseCellCollectionViewCell.swift in Sources */,
 				0820705D2142B89F00E2B539 /* TeacherCoursesViewController.swift in Sources */,
 				082070612142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift in Sources */,
+				08063B4E21BD9F6700D67A8C /* StudentCoursePromptsViewController.swift in Sources */,
+				084EAE7C21AB21E100AD6DDA /* LaunchViewController.swift in Sources */,
 				08E16DAD2121BE7800AFFCF3 /* ViewController.swift in Sources */,
 				08E16DAB2121BE7800AFFCF3 /* AppDelegate.swift in Sources */,
+				08063B4221BBD7C000D67A8C /* StudentCoursesCollectionViewCell.swift in Sources */,
 				0820705F2142BF2500E2B539 /* TeacherPromptsViewController.swift in Sources */,
 				085F33442141A70B009E2FDA /* Prompt.swift in Sources */,
+				08C33F1721A5C1DD007143F3 /* StudentPromptsViewController.swift in Sources */,
 				085F3342213DCD3F009E2FDA /* Course.swift in Sources */,
 				08F2C145213337FE00269D9A /* Response.swift in Sources */,
 				08F2C143213337DF00269D9A /* User.swift in Sources */,

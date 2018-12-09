@@ -17,7 +17,9 @@ class Singleton: NSObject {
     var allCourses: [Course]?
     var allResponses: [Response]?
     var allPrompts: [Prompt]?
-
+    var studentUser1Courses: [Course]?
+    var studentUser1Prompts: [Prompt]?
+    
     var studentUser1: User
     var studentUser2: User
     var studentUser3: User
@@ -26,35 +28,45 @@ class Singleton: NSObject {
 
     var economicsCourse: Course
     var apMicroCourse: Course
+    var spanishCourse: Course
 
     var freeMarketsPrompt: Prompt
     var elasticityPrompt: Prompt
+    var casaPrompt: Prompt
     
     var freeMarketsResponse1: Response
     var freeMarketsResponse2: Response
+    var casaResponse1: Response
 
     
     public override init()
     {
         teacherUser1 = User(aUsername: "mr_lewis", aProfileImage: #imageLiteral(resourceName: "profileimage"), aUserType: "teacherUser")
         
-        studentUser1 = User(aUsername: "jdogg219", aProfileImage: #imageLiteral(resourceName: "profileimage"), aUserType: "studentUser")
+        studentUser1 = User(aUsername: "jdogg219", aProfileImage: #imageLiteral(resourceName: "feedback"), aUserType: "studentUser")
         studentUser2 = User(aUsername: "manders", aProfileImage: #imageLiteral(resourceName: "profileimage"), aUserType: "studentUser")
         studentUser3 = User(aUsername: "miraclemike", aProfileImage: #imageLiteral(resourceName: "profileimage"), aUserType: "studentUser")
         
         freeMarketsResponse1 = Response(responseID: "001", promptID: "001", image: #imageLiteral(resourceName: "candy"), user: studentUser1, comment: "Look at all these options just for candy!")
         freeMarketsResponse2 = Response(responseID: "002", promptID: "001", image: #imageLiteral(resourceName: "hats"), user: studentUser3, comment: "Seeing all these hat choices made me think of free markets")
+        casaResponse1 = Response(responseID: "003", promptID: "003", image: #imageLiteral(resourceName: "dad"), user: studentUser1, comment: "Este es mi padre.")
 
         freeMarketsPrompt = Prompt(promptID: "001", promptImage: #imageLiteral(resourceName: "market"), promptTitle: "Free Markets", promptComment: "Snap a pic of something that reminds you of the Free Market", promptResponses: [freeMarketsResponse2, freeMarketsResponse1])
         elasticityPrompt = Prompt(promptID: "002", promptImage: #imageLiteral(resourceName: "inelastic"), promptTitle: "Inelastic", promptComment: "Take a pic of a good or service for which you are very inelastic in your demand!", promptResponses: [])
+        casaPrompt = Prompt(promptID: "003", promptImage: #imageLiteral(resourceName: "casa"), promptTitle: "Casa", promptComment: "Encuentra y etiqueta algo en tu hogar.", promptResponses: [])
         
         economicsCourse = Course(courseID: "001", coursePrompts: [freeMarketsPrompt], courseImage: #imageLiteral(resourceName: "econ"), courseName: "Economics")
         apMicroCourse = Course(courseID: "002", coursePrompts: [], courseImage: #imageLiteral(resourceName: "apmicro"), courseName: "AP Micro")
+        spanishCourse = Course(courseID: "003", coursePrompts: [casaPrompt], courseImage: #imageLiteral(resourceName: "spanish"), courseName: "Spanish I")
 
-        allCourses = [economicsCourse, apMicroCourse]
+        allCourses = [economicsCourse, apMicroCourse, spanishCourse]
         allUsers = [studentUser1, studentUser2, studentUser3, teacherUser1]
-        allPrompts = [freeMarketsPrompt, elasticityPrompt]
-        allResponses = [freeMarketsResponse1, freeMarketsResponse2]
+        allPrompts = [freeMarketsPrompt, elasticityPrompt, casaPrompt]
+        allResponses = [freeMarketsResponse1, freeMarketsResponse2, casaResponse1]
+        studentUser1Courses = [economicsCourse, spanishCourse]
+        studentUser1Prompts = [freeMarketsPrompt, casaPrompt]
+        
+        
 
     }
 
