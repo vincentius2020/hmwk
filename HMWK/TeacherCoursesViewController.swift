@@ -12,6 +12,8 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
     
     @IBOutlet weak var teacherCoursesCollectionView: UICollectionView!
     
+    var selectedCourse: Course?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,6 +58,22 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
         return cell
     }
 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCourse = Singleton.singletonObject.allCourses?[indexPath.row]
+        
+        self.performSegue(withIdentifier: "teacherCourseToPrompt", sender: self)
+    
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "teacherCourseToPrompt") {
+            if let newVC = segue.destination as? TeacherCoursePromptsViewController {
+                newVC.currentCourse = selectedCourse
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -67,3 +85,17 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
     */
 
 }
+
+//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    selectedCourse = Singleton.singletonObject.studentUser1Courses?[indexPath.row]
+//
+//    self.performSegue(withIdentifier: "studentCourseToPrompt", sender: self)
+//}
+//
+//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if (segue.identifier == "studentCourseToPrompt") {
+//        if let newVC = segue.destination as? StudentCoursePromptsViewController {
+//            newVC.currentCourse = selectedCourse
+//        }
+//    }
+//}

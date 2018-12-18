@@ -14,8 +14,7 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var teacherHomeTableView: UITableView!
     @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var teacherHomeUsername: UILabel!
-    
-    
+        
     @IBAction func editButtonPressed(_ sender: Any) {
         
         //create the controller
@@ -101,7 +100,7 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
         editButton.setTitle("Edit",for: .normal)
 
         navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
-        
+                
         teacherHomeImageView.layer.cornerRadius = teacherHomeImageView.frame.size.width/2
         
         teacherHomeImageView.layer.borderWidth = 4

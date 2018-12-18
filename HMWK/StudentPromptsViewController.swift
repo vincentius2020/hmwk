@@ -12,6 +12,8 @@ class StudentPromptsViewController: UIViewController, UICollectionViewDelegate, 
 
     @IBOutlet weak var studentPromptsCollectionView: UICollectionView!
     
+    var selectedPrompt: Prompt?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,25 +34,39 @@ class StudentPromptsViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Singleton.singletonObject.studentUser1Prompts!.count
+        return Singleton.singletonObject.allPrompts!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentPromptCell", for: indexPath) as! StudentPromptsCollectionViewCell
         
-        let prompt = Singleton.singletonObject.studentUser1Prompts?[indexPath.row]
+        let prompt = Singleton.singletonObject.allPrompts?[indexPath.row]
         
         //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
         
         cell.studentPromptCellImageView?.image = prompt?.promptImage
         cell.studentPromptCellLabel?.text = prompt?.promptTitle
         
-        
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
         
-        
         return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+        
+        self.performSegue(withIdentifier: "studentPromptToResponses", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "studentPromptToResponses") {
+            if let newVC = segue.destination as? StudentPromptResponsesViewController {
+                newVC.currentPrompt = selectedPrompt
+            }
+        }
     }
     
     
@@ -70,3 +86,17 @@ class StudentPromptsViewController: UIViewController, UICollectionViewDelegate, 
     */
 
 }
+
+//func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//    selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+//
+//    self.performSegue(withIdentifier: "studentCPR", sender: self)
+//}
+//
+//override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    if (segue.identifier == "studentCPR") {
+//        if let newVC = segue.destination as? StudentCPRViewController {
+//            newVC.currentPrompt = selectedPrompt
+//        }
+//    }
+//}

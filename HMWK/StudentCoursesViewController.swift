@@ -32,43 +32,44 @@ class StudentCoursesViewController: UIViewController, UICollectionViewDelegate, 
         // Do any additional setup after loading the view.
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Singleton.singletonObject.studentUser1Courses!.count
+        return Singleton.singletonObject.allCourses!.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentCourseCell", for: indexPath) as! StudentCoursesCollectionViewCell
         
-        let course = Singleton.singletonObject.studentUser1Courses?[indexPath.row]
+        let course = Singleton.singletonObject.allCourses?[indexPath.row]
         
         //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
         
         cell.studentCourseCellImageView?.image = course?.courseImage
         cell.studentCourseCellLabel?.text = course?.courseName
         
-        
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 0.5
-        
         
         return cell
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCourse = Singleton.singletonObject.studentUser1Courses?[indexPath.row]
+        selectedCourse = Singleton.singletonObject.allCourses?[indexPath.row]
                 
-        self.navigationController?.performSegue(withIdentifier: "studentCourseToPrompt", sender: self)
+        self.performSegue(withIdentifier: "studentCourseToPrompt", sender: self)
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "studentCourseToPrompt") {
-//            assign new VC's current course as the course in an array
-        }
-        
-        if let newVC = segue.destination as? StudentCoursePromptsViewController {
+            if let newVC = segue.destination as? StudentCoursePromptsViewController {
             newVC.currentCourse = selectedCourse
+            }
         }
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

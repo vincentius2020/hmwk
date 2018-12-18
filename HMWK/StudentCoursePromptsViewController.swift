@@ -10,11 +10,27 @@ import UIKit
 
 class StudentCoursePromptsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var studentCoursePromptsCollectionView: UICollectionView!
+    
     var currentCourse: Course!
+    var selectedPrompt: Prompt?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        studentCoursePromptsCollectionView.dataSource = self
+        studentCoursePromptsCollectionView.delegate = self
+        
+        let layout = self.studentCoursePromptsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
 
+        layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
+        layout.minimumInteritemSpacing = 5
+        layout.itemSize = CGSize(width: (self.studentCoursePromptsCollectionView.frame.size.width)/2, height: (self.studentCoursePromptsCollectionView.frame.size.height/3))
+        
+        // Do any additional setup after loading the view.
+        
+        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
+        
         // Do any additional setup after loading the view.
     }
     
@@ -22,16 +38,17 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return currentCourse.coursePrompts.count
     }
+    
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentCoursePromptCell", for: indexPath) as! StudentPromptsCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentCoursePromptCell", for: indexPath) as! StudentCoursePromptsCollectionViewCell
 
         let prompt = currentCourse.coursePrompts[indexPath.row]
 
         //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
 
-        cell.studentPromptCellImageView?.image = prompt.promptImage
-        cell.studentPromptCellLabel?.text = prompt.promptTitle
+        cell.studentCoursePromptImage?.image = prompt.promptImage
+        cell.studentCoursePromptLabel?.text = prompt.promptTitle
 
 
         cell.layer.borderColor = UIColor.lightGray.cgColor
@@ -41,6 +58,26 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
         return cell
     }
 
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+        
+        self.performSegue(withIdentifier: "studentCPR", sender: self)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "studentCPR") {
+            if let newVC = segue.destination as? StudentCPRViewController {
+                newVC.currentPrompt = selectedPrompt
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -52,3 +89,10 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
     */
 
 }
+
+//
+//override func didReceiveMemoryWarning() {
+//    super.didReceiveMemoryWarning()
+//    // Dispose of any resources that can be recreated.
+//}
+
