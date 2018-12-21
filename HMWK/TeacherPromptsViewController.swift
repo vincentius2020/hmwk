@@ -12,6 +12,8 @@ class TeacherPromptsViewController: UIViewController, UICollectionViewDelegate, 
 
     @IBOutlet weak var teacherPromptCollectionView: UICollectionView!
     
+    var selectedPrompt: Prompt?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,24 +53,25 @@ class TeacherPromptsViewController: UIViewController, UICollectionViewDelegate, 
         
         return cell
     }
-
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teacherCourseCell", for: indexPath) as! TeacherCourseCellCollectionViewCell
-//
-//        let course = Singleton.singletonObject.allCourses?[indexPath.row]
-//
-//        //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
-//
-//        cell.teacherCourseCellImageView?.image = course?.courseImage
-//        cell.teacherCourseCellLabel?.text = course?.courseName
-//
-//
-//        cell.layer.borderColor = UIColor.lightGray.cgColor
-//        cell.layer.borderWidth = 0.5
-//
-//
-//        return cell
-//    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+        
+        self.performSegue(withIdentifier: "teacherPromptToResponses", sender: self)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "teacherPromptToResponses") {
+            if let newVC = segue.destination as? TeacherPromptResponsesViewController {
+                newVC.currentPrompt = selectedPrompt
+            }
+        }
+    }
+    
     
     /*
     // MARK: - Navigation
@@ -81,3 +84,4 @@ class TeacherPromptsViewController: UIViewController, UICollectionViewDelegate, 
     */
 
 }
+

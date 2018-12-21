@@ -19,6 +19,8 @@
 		0820705F2142BF2500E2B539 /* TeacherPromptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0820705E2142BF2500E2B539 /* TeacherPromptsViewController.swift */; };
 		082070612142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082070602142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift */; };
 		08207063215FA22200E2B539 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08207062215FA22100E2B539 /* Singleton.swift */; };
+		0824AC0521CBDF2F000B419C /* TeacherPromptResponsesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0824AC0421CBDF2F000B419C /* TeacherPromptResponsesViewController.swift */; };
+		0824AC0721CBDF45000B419C /* TeacherPromptResponsesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0824AC0621CBDF45000B419C /* TeacherPromptResponsesCollectionViewCell.swift */; };
 		083579D721C2F67000561030 /* TeacherCoursePromptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083579D621C2F67000561030 /* TeacherCoursePromptsViewController.swift */; };
 		083579D921C7AF3400561030 /* TeacherCoursePromptsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083579D821C7AF3400561030 /* TeacherCoursePromptsCollectionViewCell.swift */; };
 		083579DD21C7B86100561030 /* TeacherCPRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083579DC21C7B86100561030 /* TeacherCPRViewController.swift */; };
@@ -75,6 +77,8 @@
 		0820705E2142BF2500E2B539 /* TeacherPromptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptsViewController.swift; sourceTree = "<group>"; };
 		082070602142BF5200E2B539 /* TeacherPromptCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		08207062215FA22100E2B539 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		0824AC0421CBDF2F000B419C /* TeacherPromptResponsesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptResponsesViewController.swift; sourceTree = "<group>"; };
+		0824AC0621CBDF45000B419C /* TeacherPromptResponsesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPromptResponsesCollectionViewCell.swift; sourceTree = "<group>"; };
 		083579D621C2F67000561030 /* TeacherCoursePromptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCoursePromptsViewController.swift; sourceTree = "<group>"; };
 		083579D821C7AF3400561030 /* TeacherCoursePromptsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCoursePromptsCollectionViewCell.swift; sourceTree = "<group>"; };
 		083579DC21C7B86100561030 /* TeacherCPRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCPRViewController.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 				085F333D2135FFEC009E2FDA /* FakeData.swift */,
 				080E8A1821C83029003DBB65 /* StudentPromptResponsesViewController.swift */,
 				080E8A1A21C83040003DBB65 /* StudentPromptResponsesCollectionViewCell.swift */,
+				0824AC0421CBDF2F000B419C /* TeacherPromptResponsesViewController.swift */,
+				0824AC0621CBDF45000B419C /* TeacherPromptResponsesCollectionViewCell.swift */,
 			);
 			path = HMWK;
 			sourceTree = "<group>";
@@ -347,6 +353,7 @@
 				080E8A1B21C83040003DBB65 /* StudentPromptResponsesCollectionViewCell.swift in Sources */,
 				085F333E2135FFEC009E2FDA /* FakeData.swift in Sources */,
 				08FD475F21BDAA4E00C5DC1A /* StudentCoursePromptsCollectionViewCell.swift in Sources */,
+				0824AC0521CBDF2F000B419C /* TeacherPromptResponsesViewController.swift in Sources */,
 				08207063215FA22200E2B539 /* Singleton.swift in Sources */,
 				08C33F1321A5C15C007143F3 /* StudentHomeViewController.swift in Sources */,
 				08063B4421BBE44000D67A8C /* StudentPromptsCollectionViewCell.swift in Sources */,
@@ -374,6 +381,7 @@
 				08F2C143213337DF00269D9A /* User.swift in Sources */,
 				08F2C13F21331A7C00269D9A /* TeacherHomeTableViewCell.swift in Sources */,
 				08F2C139213315EB00269D9A /* TeacherHomeViewController.swift in Sources */,
+				0824AC0721CBDF45000B419C /* TeacherPromptResponsesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
