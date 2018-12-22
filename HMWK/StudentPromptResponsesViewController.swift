@@ -11,6 +11,9 @@ import UIKit
 class StudentPromptResponsesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var studentPromptResponsesCollectionView: UICollectionView!
+    @IBOutlet weak var promptImageView: UIImageView!
+    @IBOutlet weak var promptTitleLabel: UILabel!
+    @IBOutlet weak var promptCommentLabel: UILabel!
     
     var currentPrompt: Prompt!
     
@@ -24,7 +27,14 @@ class StudentPromptResponsesViewController: UIViewController, UICollectionViewDe
         
         layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         layout.minimumInteritemSpacing = 5
-        layout.itemSize = CGSize(width: (self.studentPromptResponsesCollectionView.frame.size.width)/2, height: (self.studentPromptResponsesCollectionView.frame.size.height/3))
+        layout.itemSize = CGSize(width: (self.studentPromptResponsesCollectionView.frame.size.width)/2, height: (self.studentPromptResponsesCollectionView.frame.size.height/2.25))
+        
+        promptImageView.image = currentPrompt.promptImage
+        promptTitleLabel.text = currentPrompt.promptTitle
+        promptCommentLabel.text = currentPrompt.promptComment
+        
+        promptImageView.layer.borderWidth = 2
+        promptImageView.layer.borderColor = UIColor.black.cgColor
         
         navigationItem.titleView = UIImageView(image: UIImage(named:"hmwklogo1"))
         
