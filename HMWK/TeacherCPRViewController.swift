@@ -13,20 +13,20 @@ class TeacherCPRViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var teacherCPRCollectionView: UICollectionView!
     
     var currentPrompt: Prompt!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         teacherCPRCollectionView.dataSource = self
         teacherCPRCollectionView.delegate = self
-        
+
         let layout = self.teacherCPRCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         layout.minimumInteritemSpacing = 5
         layout.itemSize = CGSize(width: (self.teacherCPRCollectionView.frame.size.width)/2, height: (self.teacherCPRCollectionView.frame.size.height/3))
-        
-        navigationItem.titleView = UIImageView(image: UIImage(named:"hmwklogo1"))
-        
+
+//        navigationItem.titleView = UIImageView(image: UIImage(named:"hmwklogo1"))
+
         // Do any additional setup after loading the view.
     }
     

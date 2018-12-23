@@ -29,7 +29,7 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
         
         // Do any additional setup after loading the view.
         
-        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
+//        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
         
         // Do any additional setup after loading the view.
     }

@@ -27,7 +27,7 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
         
         // Do any additional setup after loading the view.
         
-        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
+//        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
         
     }
 

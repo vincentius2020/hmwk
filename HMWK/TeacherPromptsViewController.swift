@@ -27,7 +27,7 @@ class TeacherPromptsViewController: UIViewController, UICollectionViewDelegate, 
         layout.minimumInteritemSpacing = 5
         layout.itemSize = CGSize(width: (self.teacherPromptCollectionView.frame.size.width)/2, height: (self.teacherPromptCollectionView.frame.size.height/3))
         
-        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
+//        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
         
     }
 

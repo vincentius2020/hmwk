@@ -36,7 +36,7 @@ class StudentPromptResponsesViewController: UIViewController, UICollectionViewDe
         promptImageView.layer.borderWidth = 2
         promptImageView.layer.borderColor = UIColor.black.cgColor
         
-        navigationItem.titleView = UIImageView(image: UIImage(named:"hmwklogo1"))
+//        navigationItem.titleView = UIImageView(image: UIImage(named:"hmwklogo1"))
         
         // Do any additional setup after loading the view.
     }

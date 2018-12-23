@@ -12,18 +12,20 @@ import UIKit
 class Prompt {
     
     let promptID:String
+    let courseID:String
     let promptImage:UIImage
     let promptTitle:String
     let promptComment:String
     var promptResponses: [Response]
     
-    init(promptID:String, promptImage:UIImage, promptTitle:String, promptComment:String, promptResponses:[Response]){
+    init(promptID:String, courseID:String, promptImage:UIImage, promptTitle:String, promptComment:String,  promptResponses:[Response]){
         // You can name the property you are passing into the function the
         // same name as the class' property. To distinguish the two
         // add "self." to the beginning of the class' property.
         // So for example we are passing in an UImage called image and setting it as our
         // image property for Post.
         self.promptID = promptID
+        self.courseID = courseID
         self.promptImage = promptImage
         self.promptTitle = promptTitle
         self.promptComment = promptComment

@@ -99,7 +99,7 @@ class TeacherHomeViewController: UIViewController, UITableViewDelegate, UITableV
         teacherHomeImageView.image = Singleton.singletonObject.teacherUser1.profileImage
         editButton.setTitle("Edit",for: .normal)
 
-        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
+//        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
                 
         teacherHomeImageView.layer.cornerRadius = teacherHomeImageView.frame.size.width/2
         
