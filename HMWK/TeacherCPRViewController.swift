@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TeacherCPRViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     

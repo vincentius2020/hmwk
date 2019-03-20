@@ -13,12 +13,13 @@ class Prompt {
     
     let promptID:String
     let courseID:String
+    let promptImagePath:String
     let promptImage:UIImage
     let promptTitle:String
     let promptComment:String
     var promptResponses: [Response]
     
-    init(promptID:String, courseID:String, promptImage:UIImage, promptTitle:String, promptComment:String,  promptResponses:[Response]){
+    init(promptID:String, courseID:String, aPromptImagePath:String = "", promptImage:UIImage, promptTitle:String, promptComment:String,  promptResponses:[Response]){
         // You can name the property you are passing into the function the
         // same name as the class' property. To distinguish the two
         // add "self." to the beginning of the class' property.
@@ -26,6 +27,7 @@ class Prompt {
         // image property for Post.
         self.promptID = promptID
         self.courseID = courseID
+        self.promptImagePath = aPromptImagePath
         self.promptImage = promptImage
         self.promptTitle = promptTitle
         self.promptComment = promptComment

@@ -34,15 +34,15 @@ class StudentPromptsViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Singleton.singletonObject.allPrompts!.count
+//        return Singleton.singletonObject.allPrompts!.count
+        return FirebaseData.data.promptsInEnrolledCourses!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentPromptCell", for: indexPath) as! StudentPromptsCollectionViewCell
         
-        let prompt = Singleton.singletonObject.allPrompts?[indexPath.row]
-        
-        //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
+//        let prompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+        let prompt = FirebaseData.data.promptsInEnrolledCourses?[indexPath.row]
         
         cell.studentPromptCellImageView?.image = prompt?.promptImage
         cell.studentPromptCellLabel?.text = prompt?.promptTitle
@@ -55,7 +55,8 @@ class StudentPromptsViewController: UIViewController, UICollectionViewDelegate, 
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+//        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+        selectedPrompt = FirebaseData.data.promptsInEnrolledCourses?[indexPath.row]
         
         self.performSegue(withIdentifier: "studentPromptToResponses", sender: self)
     }

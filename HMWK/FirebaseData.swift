@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import Firebase
+
+class FirebaseData {
+    static let data = FirebaseData()
+    
+    var db: Firestore!
+    
+    var currentUser: User?
+    
+    var enrolledCourses: [Course]?
+    
+    var promptsInEnrolledCourses: [Prompt]?
+    
+    var responsesInEnrolledCourses: [Response]?
+    
+}

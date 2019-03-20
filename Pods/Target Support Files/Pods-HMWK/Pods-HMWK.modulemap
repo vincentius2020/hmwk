@@ -1,0 +1,6 @@
+framework module Pods_HMWK {
+  umbrella header "Pods-HMWK-umbrella.h"
+
+  export *
+  module * { export * }
+}

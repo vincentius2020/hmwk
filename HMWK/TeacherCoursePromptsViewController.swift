@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class TeacherCoursePromptsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -20,6 +21,14 @@ class TeacherCoursePromptsViewController: UIViewController, UICollectionViewDele
 
         teacherCoursePromptsCollectionView.dataSource = self
         teacherCoursePromptsCollectionView.delegate = self
+        
+        ReadFirebaseData.readCourse(courseId: currentCourse.courseID, completion: {(success) in
+            if success {
+                self.teacherCoursePromptsCollectionView.reloadData()
+            } else {
+                print("Errrrrr")
+            }
+        })
         
         let layout = self.teacherCoursePromptsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
@@ -52,7 +61,7 @@ class TeacherCoursePromptsViewController: UIViewController, UICollectionViewDele
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
+        selectedPrompt = currentCourse.coursePrompts[indexPath.row]
         
         self.performSegue(withIdentifier: "teacherCPR", sender: self)
         

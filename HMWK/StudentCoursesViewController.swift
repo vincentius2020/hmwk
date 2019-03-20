@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseUI
 
 class StudentCoursesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -25,23 +27,19 @@ class StudentCoursesViewController: UIViewController, UICollectionViewDelegate, 
         layout.minimumInteritemSpacing = 5
         layout.itemSize = CGSize(width: (self.studentCoursesCollectionView.frame.size.width)/2, height: (self.studentCoursesCollectionView.frame.size.height/3))
         
-        // Do any additional setup after loading the view.
-        
-//        navigationItem.titleView = UIImageView(image: UIImage(named: "hmwklogo1"))
-
-        // Do any additional setup after loading the view.
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Singleton.singletonObject.allCourses!.count
+//        return Singleton.singletonObject.allCourses!.count
+        return FirebaseData.data.enrolledCourses!.count
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studentCourseCell", for: indexPath) as! StudentCoursesCollectionViewCell
         
-        let course = Singleton.singletonObject.allCourses?[indexPath.row]
+//        let course = Singleton.singletonObject.allCourses?[indexPath.row]
+        let course = FirebaseData.data.enrolledCourses?[indexPath.row]
         
         //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
         
@@ -56,14 +54,14 @@ class StudentCoursesViewController: UIViewController, UICollectionViewDelegate, 
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCourse = Singleton.singletonObject.allCourses?[indexPath.row]
+        selectedCourse = FirebaseData.data.enrolledCourses![indexPath.row]
                 
-        self.performSegue(withIdentifier: "studentCourseToPrompt", sender: self)
+        self.performSegue(withIdentifier: "studentCourseToPrompts", sender: self)
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "studentCourseToPrompt") {
+        if (segue.identifier == "studentCourseToPrompts") {
             if let newVC = segue.destination as? StudentCoursePromptsViewController {
             newVC.currentCourse = selectedCourse
             }

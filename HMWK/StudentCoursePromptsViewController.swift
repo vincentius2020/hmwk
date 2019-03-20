@@ -7,14 +7,22 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseUI
 
 class StudentCoursePromptsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
+    
     @IBOutlet weak var studentCoursePromptsCollectionView: UICollectionView!
+    @IBOutlet weak var courseImageView: UIImageView!
+    @IBOutlet weak var courseTitleLabel: UILabel!
+    
     
     var currentCourse: Course!
-    var selectedPrompt: Prompt?
+//    var selectedPrompt: Prompt?
+    var storageRef: StorageReference!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +34,16 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
         layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10)
         layout.minimumInteritemSpacing = 5
         layout.itemSize = CGSize(width: (self.studentCoursePromptsCollectionView.frame.size.width)/2, height: (self.studentCoursePromptsCollectionView.frame.size.height/3))
+        
+        storageRef = Storage.storage().reference()
+        let imageReference = storageRef.child(currentCourse.courseImagePath)
+        let placeholderImage = UIImage(named: "flower.jpg")
+        courseImageView.sd_setImage(with: imageReference, placeholderImage: placeholderImage)
+        
+        courseTitleLabel.text = currentCourse.courseName
+        
+        courseImageView.layer.borderWidth = 2
+        courseImageView.layer.borderColor = UIColor.black.cgColor
         
         // Do any additional setup after loading the view.
         
@@ -47,8 +65,8 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
 
         //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
 
-        cell.studentCoursePromptImage?.image = prompt.promptImage
-        cell.studentCoursePromptLabel?.text = prompt.promptTitle
+        cell.studentCoursePromptCellImageView?.image = prompt.promptImage
+        cell.studentCoursePromptCellLabel?.text = prompt.promptTitle
 
 
         cell.layer.borderColor = UIColor.lightGray.cgColor
@@ -59,20 +77,20 @@ class StudentCoursePromptsViewController: UIViewController, UICollectionViewDele
     }
 
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedPrompt = Singleton.singletonObject.allPrompts?[indexPath.row]
-        
-        self.performSegue(withIdentifier: "studentCPR", sender: self)
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "studentCPR") {
-            if let newVC = segue.destination as? StudentCPRViewController {
-                newVC.currentPrompt = selectedPrompt
-            }
-        }
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        selectedPrompt = currentCourse.coursePrompts[indexPath.row]
+//
+//        self.performSegue(withIdentifier: "studentCPR", sender: self)
+//    }
+//
+//
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "studentCPR") {
+//            if let newVC = segue.destination as? StudentCPRViewController {
+//                newVC.currentPrompt = selectedPrompt
+//            }
+//        }
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

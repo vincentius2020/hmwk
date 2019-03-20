@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseUI
 
 class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -17,6 +19,16 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ReadFirebaseData.readCurrentUserWithCourses(userId: (FirebaseData.data.currentUser?.userEmail)!, completion: {(success) in
+            if success {
+                print ("successfully wrote user")
+                
+                FirebaseData.data.enrolledCourses = FirebaseData.data.currentUser?.enrolledCourses
+                    
+                }
+            }
+        )
+        
         teacherCoursesCollectionView.dataSource = self
         teacherCoursesCollectionView.delegate = self
         
@@ -37,13 +49,15 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Singleton.singletonObject.allCourses!.count
+//        return Singleton.singletonObject.allCourses!.count
+        return FirebaseData.data.enrolledCourses!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teacherCourseCell", for: indexPath) as! TeacherCourseCellCollectionViewCell
         
-        let course = Singleton.singletonObject.allCourses?[indexPath.row]
+//        let course = Singleton.singletonObject.allCourses?[indexPath.row]
+        let course = FirebaseData.data.enrolledCourses?[indexPath.row]
 
 //        let prompt = Singleton.singletonObject.allPrompts?.first(where: { $0.promptID == response?.promptID })
 
@@ -60,7 +74,8 @@ class TeacherCoursesViewController: UIViewController, UICollectionViewDelegate, 
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedCourse = Singleton.singletonObject.allCourses?[indexPath.row]
+//        selectedCourse = Singleton.singletonObject.allCourses?[indexPath.row]
+        selectedCourse = FirebaseData.data.enrolledCourses?[indexPath.row]
         
         self.performSegue(withIdentifier: "teacherCourseToPrompt", sender: self)
     

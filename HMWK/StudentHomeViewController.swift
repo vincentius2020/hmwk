@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class StudentHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -61,16 +62,20 @@ class StudentHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Singleton.singletonObject.allResponses!.count
+//        return Singleton.singletonObject.allResponses!.count
+        return FirebaseData.data.responsesInEnrolledCourses!.count
     }
    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentFeedCell", for: indexPath) as! StudentHomeTableViewCell
         
-        let response = Singleton.singletonObject.allResponses?[indexPath.row]
+//        let response = Singleton.singletonObject.allResponses?[indexPath.row]
+        let response = FirebaseData.data.responsesInEnrolledCourses?[indexPath.row]
         
-        let prompt = Singleton.singletonObject.allPrompts?.first(where: {$0.promptID == response?.promptID })
+//        let prompt = Singleton.singletonObject.allPrompts?.first(where: {$0.promptID == response?.promptID })
+        let prompt = FirebaseData.data.promptsInEnrolledCourses?.first(where: {$0.promptID == response?.promptID })
+        
         
         cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1
@@ -93,8 +98,11 @@ class StudentHomeViewController: UIViewController, UITableViewDelegate, UITableV
         studentHomeTableView.delegate = self
         studentHomeTableView.dataSource = self
         
-        studentHomeUsername.text = Singleton.singletonObject.studentUser1.username
-        studentHomeImage.image = Singleton.singletonObject.studentUser1.profileImage
+//        studentHomeUsername.text = Singleton.singletonObject.studentUser1.username
+        studentHomeUsername.text = FirebaseData.data.currentUser?.username
+        
+//        studentHomeImage.image = Singleton.singletonObject.studentUser1.profileImage
+        studentHomeImage.image = FirebaseData.data.currentUser?.profileImage
         
         studentHomeImage.layer.cornerRadius = studentHomeImage.frame.size.width/2
         studentHomeImage.layer.borderWidth = 4

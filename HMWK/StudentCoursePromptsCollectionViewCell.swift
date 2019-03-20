@@ -10,6 +10,7 @@ import UIKit
 
 class StudentCoursePromptsCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var studentCoursePromptImage: UIImageView!
-    @IBOutlet weak var studentCoursePromptLabel: UILabel!
+    @IBOutlet weak var studentCoursePromptCellImageView: UIImageView!
+    @IBOutlet weak var studentCoursePromptCellLabel: UILabel!
+    
 }
