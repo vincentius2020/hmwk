@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HMWK/StudentCoursePromptsViewController.swift"
+            timestampString = "573264220.607257"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "StudentCoursePromptsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HMWK.StudentCoursePromptsViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HMWK.StudentCoursePromptsViewController"
+                  moduleName = "HMWK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentlewis/Documents/HMWK/HMWK/StudentCoursePromptsViewController.swift"
+                  timestampString = "573247934.3935781"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HMWK.StudentCoursePromptsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HMWK.StudentCoursePromptsViewController"
+                  moduleName = "HMWK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentlewis/Documents/HMWK/HMWK/StudentCoursePromptsViewController.swift"
+                  timestampString = "573247934.398275"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HMWK.StudentCoursePromptsViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HMWK.StudentCoursePromptsViewController&gt;"
+                  moduleName = "HMWK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentlewis/Documents/HMWK/HMWK/StudentCoursePromptsViewController.swift"
+                  timestampString = "573247934.403375"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HMWK.StudentCoursePromptsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HMWK.StudentCoursePromptsViewController&gt;"
+                  moduleName = "HMWK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentlewis/Documents/HMWK/HMWK/StudentCoursePromptsViewController.swift"
+                  timestampString = "573247934.408067"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "HMWK.StudentCoursePromptsViewController.__deallocating_deinit"
+                  moduleName = "HMWK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vincentlewis/Documents/HMWK/HMWK/StudentCoursePromptsViewController.swift"
+                  timestampString = "573247934.41222"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
